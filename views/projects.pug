@@ -1,0 +1,8 @@
+extends ./layout.pug
+include mixins/_project.pug
+
+block body
+    h1 Projects
+    div
+        each project in projects
+            +project(project)

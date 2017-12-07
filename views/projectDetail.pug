@@ -1,0 +1,5 @@
+extends ./layout.pug
+
+block body
+    h1 
+        != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)

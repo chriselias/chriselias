@@ -1,0 +1,8 @@
+//- Create template views/page.pug
+extends ./layout.pug
+
+//- Create a block
+block body
+        .content
+                != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)
+                != PrismicDOM.RichText.asHtml(document.data.content, ctx.linkResolver)

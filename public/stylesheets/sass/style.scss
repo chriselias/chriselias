@@ -1,0 +1,156 @@
+@import "reset";
+@import "variables";
+@import "sidebar";
+
+
+
+body {
+    //-webkit-text-stroke-width: .05px;
+    //-webkit-text-stroke-color: white;
+    //-webkit-font-smoothing: antialiased;
+    //line-height:35px;
+    //font-weight: 400;
+    //letter-spacing: 0.45;
+    //color: #516677;
+}
+
+
+html { font-size: 14px; }
+
+body {
+    background-color: $white;
+    font-family: $sans-serif;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    padding: .5em 0;
+}
+
+.grid {
+    max-width: 1400px;
+    //margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    
+
+    @media screen and(min-width: $tablet-width)   {
+        grid-template-columns: 400px 1fr;
+        grid-template-rows: auto 1fr;
+        height: 100vh;
+    }
+}
+
+
+
+.media {
+    display: flex;
+    margin: 2em 0;
+    background: #FFF;
+    border: 1px solid rgb(235, 235, 235);
+    align-items: flex-start;
+    .media-figure {
+        margin-right: 1em;
+    }
+    .media-body {
+        flex: 1;
+        padding: .75em;
+    }
+}
+
+.built-with {
+ display: flex;
+    .devicons {
+        font-size: 1.75rem;
+        margin: .25em .5 0 0;
+    }
+}
+
+
+.content {
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding: 3em;
+}
+
+.img-round {
+    border-radius: 50%;
+}
+
+
+.title {
+    font-family: $serif;
+}
+
+.btn {
+    background-color: $primary;
+    margin: 1em 0;
+    color: $white;
+    padding: 1em;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+
+    &.rounded {
+        border-radius: 2em;
+    }
+    &.sm {
+        font-size: .75rem;
+        padding: .5em 1em;
+    }
+    &.block {
+        display: flex;
+    }
+}
+
+.hero {
+    margin: 3em 0;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+    padding: .15em;
+
+    &:hover {
+        background-color: gold;
+        color: black;
+    }
+}
+
+.highlight {
+    background-color: gold;
+    color: black;
+    padding: .15em;
+    display: inline-block;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    a {
+        padding: 0 1em;
+    }
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+@media screen and(max-width: $tablet-width)   {
+    .hidden-tablet {
+        display: none;
+    }
+}

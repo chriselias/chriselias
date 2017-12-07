@@ -1,0 +1,14 @@
+mixin project(project)
+    .media
+        .media-figure
+            img(src=project.data.project_image.url, alt=project.data.title, width='200', height='200')
+        .media-body
+            h3
+                != PrismicDOM.RichText.asText(project.data.title)
+            p
+                != PrismicDOM.RichText.asText(project.data.project_description)
+            strong.uppercase Built With
+            .built-with
+            for skill in project.data.skills
+                p #{skill.languages}
+            a.btn.sm.rounded(href=ctx.linkResolver(project)) View Project

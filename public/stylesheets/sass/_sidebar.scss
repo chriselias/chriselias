@@ -1,0 +1,64 @@
+.sidebar {
+    background-color: #262626;
+    grid-row-end: span 2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    padding: 3em;
+    text-align: center;
+    color: #D0D0D0;
+
+    .avatar {
+        width: 70px;
+        @media screen and(min-width: $tablet-width)   {
+            width: 128px;
+        }
+    }
+        
+}
+
+.social {
+    display: flex;
+    padding: 1.5em;
+    a {
+        font-size: 2rem;
+        color: #4A4A4A;
+        flex: 1;
+
+        &:hover {
+            color: lighten(#4A4A4A, 20);
+            background-color: transparent;
+        }
+    }
+}
+
+.contact {
+    text-align: left;
+    margin-top: 3em;
+
+
+    hr { 
+        border-color: #979797;
+        margin: 1.2em 0; }
+    
+    a {
+        font-size: 1.2rem;
+        color: #4A4A4A;
+        padding: 1em 0;
+        display: flex;
+        text-decoration: none;
+        &:hover {
+            color: lighten(#4A4A4A, 20);
+            background-color: transparent;
+        }
+
+        i {
+            padding-right: .5em;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and(min-width: $tablet-width)   {
+
+    }
+}

@@ -1,0 +1,10 @@
+extends ./layout.pug
+include mixins/_project
+
+block body
+    .hero
+        != PrismicDOM.RichText.asHtml(homepage.data.content, ctx.linkResolver)
+    div
+        each project in projects
+            +project(project)
+    
