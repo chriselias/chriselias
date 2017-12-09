@@ -115,6 +115,43 @@ th {
       padding-right: .5em;
       font-size: 1.5rem; }
 
+.media {
+  display: flex;
+  margin: 2em 0;
+  background: #FFF;
+  border: 1px solid #ebebeb;
+  align-items: flex-start; }
+  .media .media-figure {
+    margin-right: 1em; }
+  .media .media-body {
+    flex: 1;
+    padding: 1em .5em; }
+    .media .media-body h3 {
+      font-size: 1.2rem; }
+    .media .media-body h4 {
+      font-size: .85rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: .25em 0; }
+    .media .media-body p {
+      color: #9B9B9B;
+      font-size: .95rem; }
+
+.built-with {
+  display: flex; }
+  .built-with .devicons {
+    font-size: 1.75rem;
+    margin: .25em .75 0 0; }
+
+.project-detail {
+  max-width: 800px;
+  background: #F7F7F7; }
+  .project-detail h1 {
+    color: #EA1C51;
+    font-size: 1.5rem; }
+  .project-detail .project-detail-content {
+    padding: 2em; }
+
 html {
   font-size: 14px; }
 
@@ -147,28 +184,10 @@ p {
       grid-template-rows: auto 1fr;
       height: 100vh; } }
 
-.media {
-  display: flex;
-  margin: 2em 0;
-  background: #FFF;
-  border: 1px solid #ebebeb;
-  align-items: flex-start; }
-  .media .media-figure {
-    margin-right: 1em; }
-  .media .media-body {
-    flex: 1;
-    padding: .75em; }
-
-.built-with {
-  display: flex; }
-  .built-with .devicons {
-    font-size: 1.75rem;
-    margin: .25em .5 0 0; }
-
-.content {
+.main {
   max-height: 100vh;
   overflow-y: scroll;
-  padding: 3em; }
+  padding: 5em; }
 
 .img-round {
   border-radius: 50%; }
@@ -195,6 +214,7 @@ p {
 .hero {
   margin: 3em 0;
   font-size: 2rem;
+  font-weight: 100;
   line-height: 1.5; }
 
 a {
@@ -216,6 +236,7 @@ a {
 
 .nav {
   display: flex;
+  margin: 0 0 3em;
   justify-content: flex-end; }
   .nav a {
     padding: 0 1em; }

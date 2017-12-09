@@ -1,0 +1,55 @@
+
+.media {
+    display: flex;
+    margin: 2em 0;
+    background: #FFF;
+    border: 1px solid rgb(235, 235, 235);
+    align-items: flex-start;
+    .media-figure {
+        margin-right: 1em;
+    }
+    .media-body {
+        flex: 1;
+        padding: 1em .5em;
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        h4 {
+            font-size: .85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: .25em 0;
+        }
+
+        p {
+            color: #9B9B9B;
+            font-size: .95rem;
+        }
+    }
+}
+
+.built-with {
+    display: flex;
+       .devicons {
+           font-size: 1.75rem;
+           margin: .25em .75 0 0;
+       }
+   }
+
+
+
+.project-detail {
+    max-width: 800px;
+    background: #F7F7F7;
+
+    h1 {
+        color: $primary;
+        font-size: 1.5rem;
+    }
+
+    .project-detail-content {
+        padding: 2em;
+    }
+}

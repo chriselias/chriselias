@@ -1,6 +1,7 @@
 @import "reset";
 @import "variables";
 @import "sidebar";
+@import "projects";
 
 
 
@@ -48,35 +49,10 @@ p {
 }
 
 
-
-.media {
-    display: flex;
-    margin: 2em 0;
-    background: #FFF;
-    border: 1px solid rgb(235, 235, 235);
-    align-items: flex-start;
-    .media-figure {
-        margin-right: 1em;
-    }
-    .media-body {
-        flex: 1;
-        padding: .75em;
-    }
-}
-
-.built-with {
- display: flex;
-    .devicons {
-        font-size: 1.75rem;
-        margin: .25em .5 0 0;
-    }
-}
-
-
-.content {
+.main {
     max-height: 100vh;
     overflow-y: scroll;
-    padding: 3em;
+    padding: 5em;
 }
 
 .img-round {
@@ -112,6 +88,7 @@ p {
 .hero {
     margin: 3em 0;
     font-size: 2rem;
+    font-weight: 100;
     line-height: 1.5;
 }
 
@@ -139,6 +116,7 @@ a {
 
 .nav {
     display: flex;
+    margin: 0 0 3em;
     justify-content: flex-end;
     a {
         padding: 0 1em;

@@ -1,5 +1,14 @@
 extends ./layout.pug
 
 block body
-    h1 
-        != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)
+    .project-detail
+        img(src=document.data.project_image.url, alt=document.data.title)
+        .project-detail-content
+            h1
+                != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)
+                
+            != PrismicDOM.RichText.asHtml(document.data.project_description)
+            
+            .built-with
+                for skill in document.data.skills
+                    span(class=`devicons devicons-${skill.languages}`)
