@@ -37,7 +37,7 @@ app.use((req, res, next) => {
  */
 app.get('/about', (req, res) => {
   // We store the param uid in a variable
- // const uid = req.params.uid;
+  // const uid = req.params.uid;
 
   req.prismic.api.getByUID('page', 'about')
     .then((document) => {
@@ -69,8 +69,10 @@ app.get('/projects/:uid', (req, res) => {
 
 app.get('/projects', (req, res) => {
   req.prismic.api.query(
-    Prismic.Predicates.at('document.type', 'project'))
-    .then(function(response) {
+    Prismic.Predicates.at('document.type', 'project'),
+    { orderings: '[my.project.project_date desc]' }
+)
+    .then((response) => {
       res.render('projects', {projects: response.results });
     }).catch((error) => {
       res.status(404).send('404 not found');
@@ -85,9 +87,8 @@ app.get('/', (req, res) => {
   req.prismic.api.getSingle('homepage')
     .then((homepage) => {
       if (homepage) {
-        req.prismic.api.query(
-          Prismic.Predicates.at('document.type', 'project'))
-          .then(function(response) {
+        req.prismic.api.query(Prismic.Predicates.at('document.type', 'project'))
+          .then((response) => {
             res.render('home',
               {
                 homepage,
@@ -103,18 +104,18 @@ app.get('/', (req, res) => {
 /*
  * Prismic documentation to build your project with prismic
  */
-app.get('/help', (req, res) => {
-  const repoRegexp = /^(https?:\/\/([-\w]+)\.[a-z]+\.(io|dev))\/api(\/v2)?$/;
-  const [_, repoURL, name, extension, apiVersion] = PrismicConfig.apiEndpoint.match(repoRegexp);
-  const { host } = req.headers;
-  const isConfigured = name !== 'your-repo-name';
-  res.render('help', {
-    isConfigured,
-    repoURL,
-    name,
-    host,
-  });
-});
+// app.get('/help', (req, res) => {
+//   const repoRegexp = /^(https?:\/\/([-\w]+)\.[a-z]+\.(io|dev))\/api(\/v2)?$/;
+//   const [_, repoURL, name, extension, apiVersion] = PrismicConfig.apiEndpoint.match(repoRegexp);
+//   const { host } = req.headers;
+//   const isConfigured = name !== 'your-repo-name';
+//   res.render('help', {
+//     isConfigured,
+//     repoURL,
+//     name,
+//     host,
+//   });
+// });
 
 /*
  * Preconfigured prismic preview

@@ -4,7 +4,7 @@ include mixins/_project
 block body
     .hero
         != PrismicDOM.RichText.asHtml(homepage.data.content, ctx.linkResolver)
-    div
+    section
         each project in projects
             +project(project)
     
