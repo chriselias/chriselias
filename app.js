@@ -51,6 +51,19 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/hire', (req, res) => {
+  req.prismic.api.getByUID('page', 'hire')
+    .then((document) => {
+      if (document) {
+        res.render('page', { document });
+      } else {
+        res.status(404).send('404 not found');
+      }
+    }).catch((error) => {
+      res.status(404).send('404 not found');
+    });
+});
+
 app.get('/projects/:uid', (req, res) => {
   // We store the param uid in a variable
   const uid = req.params.uid;
@@ -70,10 +83,10 @@ app.get('/projects/:uid', (req, res) => {
 app.get('/projects', (req, res) => {
   req.prismic.api.query(
     Prismic.Predicates.at('document.type', 'project'),
-    { orderings: '[my.project.project_date desc]' }
-)
+    { orderings: '[my.project.project_date desc]' },
+  )
     .then((response) => {
-      res.render('projects', {projects: response.results });
+      res.render('projects', { projects: response.results });
     }).catch((error) => {
       res.status(404).send('404 not found');
     });
@@ -89,11 +102,13 @@ app.get('/', (req, res) => {
       if (homepage) {
         req.prismic.api.query(Prismic.Predicates.at('document.type', 'project'))
           .then((response) => {
-            res.render('home',
+            res.render(
+'home',
               {
                 homepage,
-                projects : response.results
-              });
+                projects: response.results,
+              }
+);
           });
       } else {
         res.status(404).send('404 not found');

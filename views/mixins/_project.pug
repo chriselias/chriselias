@@ -1,14 +1,16 @@
 mixin project(project)
     .media
         .media-figure
-            img(src=project.data.project_image.url, alt=project.data.title, width='250', height='250')
+            img(src=project.data.project_image.url, alt=project.data.title)
         .media-body
             h3
-                != PrismicDOM.RichText.asText(project.data.title)
+                a(href=`projects/${project.uid}`)
+                    != PrismicDOM.RichText.asText(project.data.title)
             p
                 != PrismicDOM.RichText.asText(project.data.project_description).substr(0,200)
                 |...
             .built-with
-                for skill in project.data.skills
+                // for skill in project.data.skills
                     span(class=`devicons devicons-${skill.languages}`)
-            a.btn.sm.rounded(href=`projects/${project.uid}`) View Project
+            // a.btn.sm(href=`projects/${project.uid}`)
+                != PrismicDOM.RichText.asText(project.data.title)

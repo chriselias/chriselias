@@ -81,7 +81,7 @@ th {
   color: #D0D0D0; }
   .sidebar .avatar {
     width: 70px; }
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
       .sidebar .avatar {
         width: 128px; } }
 
@@ -116,26 +116,25 @@ th {
       font-size: 1.5rem; }
 
 .media {
-  display: flex;
   margin: 2em 0;
   background: #FFF;
   border: 1px solid #ebebeb;
   align-items: flex-start; }
-  .media .media-figure {
-    margin-right: 1em; }
   .media .media-body {
     flex: 1;
     padding: 1em .5em; }
     .media .media-body h3 {
-      font-size: 1.2rem; }
+      font-size: 1.5rem;
+      color: #EA1C51;
+      font-family: "Arvo", serif; }
     .media .media-body h4 {
       font-size: .85rem;
       text-transform: uppercase;
       font-weight: 600;
       margin: .25em 0; }
     .media .media-body p {
-      color: #9B9B9B;
-      font-size: .95rem; }
+      color: #262626;
+      font-size: 1rem; }
 
 .built-with {
   display: flex; }
@@ -151,6 +150,18 @@ th {
     font-size: 1.5rem; }
   .project-detail .project-detail-content {
     padding: 2em; }
+
+@media screen and (min-width: 1000px) {
+  .media {
+    display: flex;
+    margin: 2em 0;
+    align-items: flex-start; }
+    .media .media-figure {
+      margin-right: 1em;
+      max-width: 250px; }
+    .media .media-body {
+      flex: 1;
+      padding: 1em .5em; } }
 
 html {
   font-size: 14px; }
@@ -169,7 +180,9 @@ h3 {
   font-size: 1.5rem; }
 
 p {
-  padding: .5em 0; }
+  padding: .5em 0;
+  font-size: 1.25rem;
+  line-height: 1.5; }
 
 .grid {
   max-width: 1400px;
@@ -178,7 +191,7 @@ p {
   grid-template-rows: 100px 1fr;
   grid-column-gap: 1px;
   grid-row-gap: 1px; }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     .grid {
       grid-template-columns: 400px 1fr;
       grid-template-rows: auto 1fr;
@@ -212,10 +225,11 @@ p {
     display: flex; }
 
 .hero {
-  margin: 3em 0;
-  font-size: 2rem;
-  font-weight: 100;
-  line-height: 1.5; }
+  margin: 3em 0; }
+  .hero p {
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.5; }
 
 a {
   text-decoration: none;
@@ -244,6 +258,6 @@ a {
 ::-webkit-scrollbar {
   display: none; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .hidden-tablet {
     display: none; } }
