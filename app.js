@@ -66,7 +66,7 @@ app.get('/hire', (req, res) => {
 
 app.get('/projects/:uid', (req, res) => {
   // We store the param uid in a variable
-  const uid = req.params.uid;
+  const { uid } = req.params.uid;
 
   req.prismic.api.getByUID('project', uid)
     .then((document) => {
@@ -103,12 +103,12 @@ app.get('/', (req, res) => {
         req.prismic.api.query(Prismic.Predicates.at('document.type', 'project'))
           .then((response) => {
             res.render(
-'home',
+              'home',
               {
                 homepage,
                 projects: response.results,
-              }
-);
+              },
+            );
           });
       } else {
         res.status(404).send('404 not found');

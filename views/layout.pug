@@ -2,20 +2,21 @@ include mixins/_nav
 doctype html(lang='en')
 
 head
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-114702011-1")
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114702011-1');
     title Chris Elias | Full Stack Web Developer in Chicago, IL
     link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet")
     link(href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet')
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css')
     link(rel="stylesheet", href="/stylesheets/style.css")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-
-    // Required for Previews and Experiments
-    script(src="https://code.jquery.com/jquery-1.12.4.min.js")
-    script
-      = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
-    script(src="//static.cdn.prismic.io/prismic.min.js")
-    script(src="/javascript/vendors/highlight.min.js")
 
 body
     .grid
@@ -36,13 +37,13 @@ body
             .contact.hidden-tablet
                 h2 Contact Info
                 p How to get a hold of me
-                hr 
+                hr
                 a(href="mailto:chris@chriselias.com")
                     i.fa.fa-envelope
-                    | chris@chriselias.com 
+                    | chris@chriselias.com
                 a(href="tel:7088609914")
                     i.fa.fa-mobile-phone
-                    | 708.860.9914 
+                    | 708.860.9914
                 a(href="https://twitter.com/chriselias")
                     i.fa.fa-twitter
                     | @chriselias
@@ -52,3 +53,11 @@ body
         .main
             +nav()
             block body
+
+// Required for Previews and Experiments
+
+script(src="https://code.jquery.com/jquery-1.11.3.min.js")
+script
+    = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+script(src="//static.cdn.prismic.io/prismic.min.js")
+script(src="/javascript/vendors/highlight.min.js")
